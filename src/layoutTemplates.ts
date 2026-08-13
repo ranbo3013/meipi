@@ -36,6 +36,7 @@ export const STYLE_ORDER = [
   'petpink',
   'gutengreen',
   'booklist',
+  'annivgold',
 ]
 
 // 行业筛选项（"全部"由组件处理）
@@ -1669,6 +1670,79 @@ export const USAGES: UsageDef[] = [
 `
     },
   },
+  // 校庆金蓝 · 周年校庆：金蓝双色喜庆 + 蓝底白字胶囊（复刻 135「周年校庆一键排版」）
+  {
+    id: 'anniversary',
+    name: '周年校庆',
+    industries: ['教育', '活动'],
+    shell: (t) => {
+      const head = `
+<div style="margin:0 0 22px; padding:8px 22px; background:#f7fcff; border:1px solid #c7ebfa; border-radius:20px; text-align:center; color:#2b8fc4; font-size:14px; line-height:1.6;">
+  <span style="font-weight:700; color:#6ec1f5;">点击蓝字</span>，关注我们，获取更多校庆资讯
+</div>`
+      const foot = `
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#ffffff; background:#6ec1f5; border-radius:8px; padding:8px 0; max-width:40%; margin-left:auto; margin-right:auto;">END</div>
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px dashed #ffca42; border-radius:10px; background:#f7fcff; text-align:center; color:#5a5a3a; font-size:14px; line-height:1.8;">
+  感谢你读到这里 · 周年校庆<br/>愿每一份校友情，都被时光温柔收藏
+</div>
+<div style="margin:20px 0 4px; padding:16px; background:#f7fcff; border-radius:14px; border-top:3px solid #ffca42; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#2e7bb5; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#6ec1f5; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>`
+      return { head, foot }
+    },
+    scaffold: (t) => {
+      const heroImg =
+        'data:image/svg+xml,' +
+        encodeURIComponent(
+          '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6ec1f5"/><stop offset="1" stop-color="#ffca42"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/><text x="50%" y="50%" font-family="sans-serif" font-size="22" fill="#ffffff" text-anchor="middle">周年校庆</text><text x="50%" y="72%" font-family="sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">Replace with your photo</text></svg>',
+        )
+      return `
+<div style="margin:0 0 22px; padding:8px 22px; background:#f7fcff; border:1px solid #c7ebfa; border-radius:20px; text-align:center; color:#2b8fc4; font-size:14px; line-height:1.6;">
+  <span style="font-weight:700; color:#6ec1f5;">点击蓝字</span>，关注我们，获取更多校庆资讯
+</div>
+
+<h1>${t}</h1>
+
+<p>一百二十年，足够让一棵树长成森林，也足够让一群人从少年变成校友。比格学院一百二十周年校庆，不只是一天的热闹，更是一封写给我们共同青春的信。</p>
+
+<h2>校庆活动</h2>
+
+<div style="margin:18px 0 22px; padding:8px; background:#f7fcff; border:2px solid #c7ebfa; border-radius:16px;">
+  <img src="${heroImg}" alt="校庆配图" style="width:100%; border-radius:12px; display:block;" />
+</div>
+
+<p>校庆当天设有校史展、校友论坛与操场市集。从清晨的升旗仪式到深夜的篝火，每一个环节都为"回来"的人留好了位置。</p>
+
+<h2>纪念礼品</h2>
+
+<p>凭校友卡可领取专属纪念品与校庆餐券。一枚徽章、一张餐券，装下的不是便宜，是"我曾在这里"的踏实。</p>
+
+<h2>校庆晚会</h2>
+
+<p>晚会以"与校同庆"为主题，校友乐队、校友合唱与在校生同台。灯光亮起的那刻，台下分不清谁是老师、谁是学生，只剩同一种年少。</p>
+
+<blockquote><p>校庆，是把散落各地的我们，重新拼成一张完整的合影。</p></blockquote>
+
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#ffffff; background:#6ec1f5; border-radius:8px; padding:8px 0; max-width:40%; margin-left:auto; margin-right:auto;">END</div>
+
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px dashed #ffca42; border-radius:10px; background:#f7fcff; text-align:center; color:#5a5a3a; font-size:14px; line-height:1.8;">
+  感谢你读到这里 · 周年校庆<br/>愿每一份校友情，都被时光温柔收藏
+</div>
+
+<div style="margin:20px 0 4px; padding:16px; background:#f7fcff; border-radius:14px; border-top:3px solid #ffca42; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#2e7bb5; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#6ec1f5; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>
+`
+    },
+  },
 ]
 
 export interface TemplateDef {
@@ -1726,6 +1800,7 @@ export const TEMPLATES: TemplateDef[] = [
   { id: 't41', styleId: 'petpink', usageId: 'petcare', industries: ['生活', '媒体'] },
   { id: 't42', styleId: 'gutengreen', usageId: 'guten', industries: ['节气', '生活'] },
   { id: 't43', styleId: 'booklist', usageId: 'bookrec', industries: ['阅读', '文学'] },
+  { id: 't44', styleId: 'annivgold', usageId: 'anniversary', industries: ['教育', '活动'] },
 ]
 
 // 便捷查询
