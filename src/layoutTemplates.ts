@@ -37,6 +37,7 @@ export const STYLE_ORDER = [
   'gutengreen',
   'booklist',
   'annivgold',
+  'dadblue',
 ]
 
 // 行业筛选项（"全部"由组件处理）
@@ -1743,6 +1744,79 @@ export const USAGES: UsageDef[] = [
 `
     },
   },
+  // 父爱深蓝 · 父亲节：父爱深蓝 + 浅蓝底深蓝字标题块（复刻 135「父亲节一键排版」）
+  {
+    id: 'fathersday',
+    name: '父亲节',
+    industries: ['亲情', '家庭'],
+    shell: (t) => {
+      const head = `
+<div style="margin:0 0 22px; padding:8px 22px; background:#f2f9fc; border:1px solid #bae9fb; border-radius:20px; text-align:center; color:#055698; font-size:14px; line-height:1.6;">
+  <span style="font-weight:700; color:#055698;">点击蓝字</span>，关注我们，获取更多父爱故事
+</div>`
+      const foot = `
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#ffffff; background:#055698; border-radius:8px; padding:8px 0; max-width:40%; margin-left:auto; margin-right:auto;">END</div>
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px dashed #bae9fb; border-radius:10px; background:#f2f9fc; text-align:center; color:#2a4a63; font-size:14px; line-height:1.8;">
+  感谢您读到这里 · 父亲节<br/>愿每一份沉默的父爱，都被温柔看见
+</div>
+<div style="margin:20px 0 4px; padding:16px; background:#f2f9fc; border-radius:14px; border-top:3px solid #055698; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#055698; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#1a7fc4; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>`
+      return { head, foot }
+    },
+    scaffold: (t) => {
+      const heroImg =
+        'data:image/svg+xml,' +
+        encodeURIComponent(
+          '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#055698"/><stop offset="1" stop-color="#bae9fb"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/><text x="50%" y="50%" font-family="sans-serif" font-size="22" fill="#ffffff" text-anchor="middle">父亲节</text><text x="50%" y="72%" font-family="sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">Replace with your photo</text></svg>',
+        )
+      return `
+<div style="margin:0 0 22px; padding:8px 22px; background:#f2f9fc; border:1px solid #bae9fb; border-radius:20px; text-align:center; color:#055698; font-size:14px; line-height:1.6;">
+  <span style="font-weight:700; color:#055698;">点击蓝字</span>，关注我们，获取更多父爱故事
+</div>
+
+<h1>${t}</h1>
+
+<p>父亲的沉默，常常被误读成冷漠。其实他那一代人，最擅长的事就是把爱藏进行动里——一次默默的转账，一句"到了没"，还有永远比你需要更早亮起的灯。</p>
+
+<h2>那些珍藏的时光</h2>
+
+<div style="margin:18px 0 22px; padding:8px; background:#f2f9fc; border:2px solid #bae9fb; border-radius:16px;">
+  <img src="${heroImg}" alt="父亲节配图" style="width:100%; border-radius:12px; display:block;" />
+</div>
+
+<p>小时候，他的肩膀是最稳的座位；长大后，他的背影成了最远的风景。我们总以为来日方长，却忘了他的白发，早就悄悄数过了春秋。</p>
+
+<h2>感谢您的教导</h2>
+
+<p>他没有太多道理可讲，却用一辈子示范了什么叫担当。那些当年听不进去的叮嘱，如今都成了我们在外面撑住自己的底气。</p>
+
+<h2>父亲节快乐</h2>
+
+<p>这个节日，不必多隆重。一条微信、一通电话、一顿他爱吃的家常菜，就足够让那个不善言辞的人，偷偷高兴好几天。</p>
+
+<blockquote><p>父爱如山，不一定高声，却始终在身后。</p></blockquote>
+
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#ffffff; background:#055698; border-radius:8px; padding:8px 0; max-width:40%; margin-left:auto; margin-right:auto;">END</div>
+
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px dashed #bae9fb; border-radius:10px; background:#f2f9fc; text-align:center; color:#2a4a63; font-size:14px; line-height:1.8;">
+  感谢您读到这里 · 父亲节<br/>愿每一份沉默的父爱，都被温柔看见
+</div>
+
+<div style="margin:20px 0 4px; padding:16px; background:#f2f9fc; border-radius:14px; border-top:3px solid #055698; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#055698; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#1a7fc4; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>
+`
+    },
+  },
 ]
 
 export interface TemplateDef {
@@ -1801,6 +1875,7 @@ export const TEMPLATES: TemplateDef[] = [
   { id: 't42', styleId: 'gutengreen', usageId: 'guten', industries: ['节气', '生活'] },
   { id: 't43', styleId: 'booklist', usageId: 'bookrec', industries: ['阅读', '文学'] },
   { id: 't44', styleId: 'annivgold', usageId: 'anniversary', industries: ['教育', '活动'] },
+  { id: 't45', styleId: 'dadblue', usageId: 'fathersday', industries: ['亲情', '家庭'] },
 ]
 
 // 便捷查询
