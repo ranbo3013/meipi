@@ -31,6 +31,9 @@ export const STYLE_ORDER = [
   'cafe',
   'solar-autumn',
   'reportblue',
+  'readinggreen',
+  'promored',
+  'petpink',
 ]
 
 // 行业筛选项（"全部"由组件处理）
@@ -1299,6 +1302,225 @@ export const USAGES: UsageDef[] = [
 `
     },
   },
+  // 世界读书日：深绿浅绿 · 暖黄点缀（复刻 135「读书日活动一键排版」）
+  {
+    id: 'readingday',
+    name: '世界读书日',
+    industries: ['读书', '文化'],
+    shell: (t) => {
+      const head = `
+<div style="margin:0 0 22px; padding:6px 22px; background:#5fa55a; border-radius:20px; text-align:center; color:#ffffff; font-size:15px; line-height:1.6; letter-spacing:1.5px;">
+  <span style="font-weight:700;">点击蓝字</span>，立即关注
+</div>`
+      const foot = `
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#55963e; border:1px solid #55963e; border-radius:20px; padding:4px 0; max-width:38%; margin-left:auto; margin-right:auto;">END</div>
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px solid #b7d8a8; border-radius:5px; background:#f3f9f0; text-align:center; color:#4a6b45; font-size:15px; line-height:1.8;">
+  感谢你读到这里 · 世界读书日<br/>愿每一本书，都被温柔读完
+</div>
+<div style="margin:24px 0 4px; padding:16px; background:#f3f9f0; border-radius:14px; border-top:3px solid #55963e; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#55963e; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#7aa06f; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>`
+      return { head, foot }
+    },
+    scaffold: (t) => {
+      const heroImg =
+        'data:image/svg+xml,' +
+        encodeURIComponent(
+          '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55963e"/><stop offset="1" stop-color="#facc58"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/><text x="50%" y="50%" font-family="sans-serif" font-size="22" fill="#ffffff" text-anchor="middle">世界读书日</text><text x="50%" y="72%" font-family="sans-serif" font-size="13" fill="#eaf4e3" text-anchor="middle">Replace with your photo</text></svg>',
+        )
+      return `
+<div style="margin:0 0 22px; padding:6px 22px; background:#5fa55a; border-radius:20px; text-align:center; color:#ffffff; font-size:15px; line-height:1.6; letter-spacing:1.5px;">
+  <span style="font-weight:700;">点击蓝字</span>，立即关注
+</div>
+
+<h1>${t}</h1>
+
+<p>世界读书日，不只是一天，而是一种生活方式。当我们愿意为一本书停下脚步，世界便在字里行间悄悄变大。</p>
+
+<h2>活动简介</h2>
+
+<p>本次阅读推广以"让阅读成为一种习惯"为主题，面向所有热爱文字的人，用一场慢下来的活动，重新连接书与生活的温度。</p>
+
+<h2>活动安排</h2>
+
+<p>从共读分享到盲盒换书，从亲子绘本到深夜书房，我们把一整天的时光，留给那些值得反复翻阅的故事。</p>
+
+<div style="margin:18px 0 22px; padding:8px; background:#f3f9f0; border:2px solid #b7d8a8; border-radius:16px;">
+  <img src="${heroImg}" alt="读书日配图" style="width:100%; border-radius:12px; display:block;" />
+</div>
+
+<h2>参与方式</h2>
+
+<p>带上你最喜欢的一本书，来现场，或就在评论区留下它的名字。让更多人，因为你的推荐而翻开新的一页。</p>
+
+<blockquote><p>你读过的每一行字，都会在某个不经意的时刻，长成你现在的样子。</p></blockquote>
+
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#55963e; border:1px solid #55963e; border-radius:20px; padding:4px 0; max-width:38%; margin-left:auto; margin-right:auto;">END</div>
+
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px solid #b7d8a8; border-radius:5px; background:#f3f9f0; text-align:center; color:#4a6b45; font-size:15px; line-height:1.8;">
+  感谢你读到这里 · 世界读书日<br/>愿每一本书，都被温柔读完
+</div>
+
+<div style="margin:24px 0 4px; padding:16px; background:#f3f9f0; border-radius:14px; border-top:3px solid #55963e; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#55963e; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#7aa06f; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>
+`
+    },
+  },
+  // 年终好价节：暖红 + 暖黄 · 电商促销风（复刻 135「年终好价节一键排版」）
+  {
+    id: 'yearend',
+    name: '年终好价节',
+    industries: ['电商', '零售'],
+    shell: (t) => {
+      const head = `
+<div style="margin:0 0 22px; padding:6px 22px; background:#ffc95f; border-radius:20px; text-align:center; color:#333333; font-size:15px; line-height:1.6; letter-spacing:1.5px;">
+  <span style="font-weight:700;">点击蓝字</span>，立即关注
+</div>`
+      const foot = `
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#f95f61; border:1px solid #f95f61; border-radius:20px; padding:4px 0; max-width:38%; margin-left:auto; margin-right:auto;">END</div>
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px solid #ffd9a0; border-radius:5px; background:#fff8de; text-align:center; color:#7a4a3a; font-size:15px; line-height:1.8;">
+  感谢你读到这里 · 年终好价节<br/>愿每一份好物，都被心仪的人带走
+</div>
+<div style="margin:24px 0 4px; padding:16px; background:#fff8de; border-radius:14px; border-top:3px solid #f95f61; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#f95f61; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#c79a3a; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>`
+      return { head, foot }
+    },
+    scaffold: (t) => {
+      const heroImg =
+        'data:image/svg+xml,' +
+        encodeURIComponent(
+          '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f95f61"/><stop offset="1" stop-color="#ffc95f"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/><text x="50%" y="50%" font-family="sans-serif" font-size="22" fill="#ffffff" text-anchor="middle">年终好价节</text><text x="50%" y="72%" font-family="sans-serif" font-size="13" fill="#fff8de" text-anchor="middle">Replace with your photo</text></svg>',
+        )
+      return `
+<div style="margin:0 0 22px; padding:6px 22px; background:#ffc95f; border-radius:20px; text-align:center; color:#333333; font-size:15px; line-height:1.6; letter-spacing:1.5px;">
+  <span style="font-weight:700;">点击蓝字</span>，立即关注
+</div>
+
+<h1>${t}</h1>
+
+<p>年终好价节，是一年里最值得停下手的事。当价格回到诚意，当好物遇到需要它的人，购物的意义，便不只是消费，而是彼此成全。</p>
+
+<h2>活动简介</h2>
+
+<p>本次大促以"好价不等人"为主题，线上线下齐狂欢，用一年里最低的姿态，把最实在的优惠，交到你手上。</p>
+
+<h2>超值单品</h2>
+
+<p>从日用百货到数码好物，从母婴宠物体到自我犒赏，我们把整年的诚意，压缩成这一次闭眼入的清单。</p>
+
+<div style="margin:18px 0 22px; padding:8px; background:#fff8de; border:2px solid #ffd9a0; border-radius:16px;">
+  <img src="${heroImg}" alt="好价节配图" style="width:100%; border-radius:12px; display:block;" />
+</div>
+
+<h2>参与方式</h2>
+
+<p>打开页面，领券下单，或就在评论区留下你最想带走的那一件。让这个年终，多一点划算，少一点将就。</p>
+
+<blockquote><p>你省下的每一分钱，都会变成下一段旅程的底气。</p></blockquote>
+
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#f95f61; border:1px solid #f95f61; border-radius:20px; padding:4px 0; max-width:38%; margin-left:auto; margin-right:auto;">END</div>
+
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px solid #ffd9a0; border-radius:5px; background:#fff8de; text-align:center; color:#7a4a3a; font-size:15px; line-height:1.8;">
+  感谢你读到这里 · 年终好价节<br/>愿每一份好物，都被心仪的人带走
+</div>
+
+<div style="margin:24px 0 4px; padding:16px; background:#fff8de; border-radius:14px; border-top:3px solid #f95f61; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#f95f61; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#c79a3a; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>
+`
+    },
+  },
+  // 萌宠粉 · 养宠课堂：粉红 + 奶油 + 黄色 END（复刻 135「养宠课堂一键排版」）
+  {
+    id: 'petcare',
+    name: '养宠课堂',
+    industries: ['生活', '媒体'],
+    shell: (t) => {
+      const head = `
+<div style="margin:0 0 22px; padding:8px 22px; background:#fff0f3; border:1px solid #ffd1d9; border-radius:20px; text-align:center; color:#c23a52; font-size:14px; line-height:1.6;">
+  <span style="font-weight:700; color:#f26077;">点击蓝字</span>，关注我们，获取更多养宠知识
+</div>`
+      const foot = `
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#704026; background:#ffd863; border-radius:8px; padding:8px 0; max-width:40%; margin-left:auto; margin-right:auto;">END</div>
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px solid #eb6e6e; border-radius:10px; background:#fcf5f5; text-align:center; color:#8a5a60; font-size:14px; line-height:1.8;">
+  感谢你读到这里 · 养宠小课堂<br/>愿每个毛孩子都被温柔以待
+</div>
+<div style="margin:20px 0 4px; padding:16px; background:#fff0f3; border-radius:14px; border-top:3px solid #f26077; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#f26077; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#c79a3a; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>`
+      return { head, foot }
+    },
+    scaffold: (t) => {
+      const heroImg =
+        'data:image/svg+xml,' +
+        encodeURIComponent(
+          '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f26077"/><stop offset="1" stop-color="#fff0cf"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/><text x="50%" y="50%" font-family="sans-serif" font-size="22" fill="#ffffff" text-anchor="middle">养宠小课堂</text><text x="50%" y="72%" font-family="sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">Replace with your photo</text></svg>',
+        )
+      return `
+<div style="margin:0 0 22px; padding:8px 22px; background:#fff0f3; border:1px solid #ffd1d9; border-radius:20px; text-align:center; color:#c23a52; font-size:14px; line-height:1.6;">
+  <span style="font-weight:700; color:#f26077;">点击蓝字</span>，关注我们，获取更多养宠知识
+</div>
+
+<h1>${t}</h1>
+
+<p>养一只毛孩子，是把一份长长的牵挂，安放进日常。它不会说话，却把全部信任交给了你。这份「养宠课堂」，想陪你把照顾这件事，做得更从容一点。</p>
+
+<h2>饮食注意事项</h2>
+
+<p>不同年龄、体型的宠物，对营养的需求天差地别。幼年期重蛋白与钙，老年期控盐控脂，换粮要七日渐进，别让肠胃措手不及。</p>
+
+<div style="margin:18px 0 22px; padding:8px; background:#fcf5f5; border:2px solid #eb6e6e; border-radius:16px;">
+  <img src="${heroImg}" alt="养宠配图" style="width:100%; border-radius:12px; display:block;" />
+</div>
+
+<h2>如何保证宠物健康</h2>
+
+<p>规律疫苗、按时驱虫、定期体检，是三道基础防线。再多一点耐心观察：精神、食欲、排泄的细微变化，往往是最早的健康信号。</p>
+
+<h2>其它注意事项</h2>
+
+<p>居家要收好电线与尖锐物，阳台记得封网；出门务必牵绳，既护它，也护他人。爱它，就从这些具体的小心开始。</p>
+
+<blockquote><p>你给它的每一分用心，都会变成它蹭你时，那一下毫无保留的依赖。</p></blockquote>
+
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#704026; background:#ffd863; border-radius:8px; padding:8px 0; max-width:40%; margin-left:auto; margin-right:auto;">END</div>
+
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px solid #eb6e6e; border-radius:10px; background:#fcf5f5; text-align:center; color:#8a5a60; font-size:14px; line-height:1.8;">
+  感谢你读到这里 · 养宠小课堂<br/>愿每个毛孩子都被温柔以待
+</div>
+
+<div style="margin:20px 0 4px; padding:16px; background:#fff0f3; border-radius:14px; border-top:3px solid #f26077; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#f26077; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#c79a3a; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>
+`
+    },
+  },
 ]
 
 export interface TemplateDef {
@@ -1351,6 +1573,9 @@ export const TEMPLATES: TemplateDef[] = [
   { id: 't36', styleId: 'cafe', usageId: 'cafetime', industries: ['餐饮', '生活'] },
   { id: 't37', styleId: 'solar-autumn', usageId: 'liqiu', industries: ['媒体', '生活'] },
   { id: 't38', styleId: 'reportblue', usageId: 'seriesreport', industries: ['媒体', '政务'] },
+  { id: 't39', styleId: 'readinggreen', usageId: 'readingday', industries: ['读书', '文化'] },
+  { id: 't40', styleId: 'promored', usageId: 'yearend', industries: ['电商', '零售'] },
+  { id: 't41', styleId: 'petpink', usageId: 'petcare', industries: ['生活', '媒体'] },
 ]
 
 // 便捷查询
