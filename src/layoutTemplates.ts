@@ -35,6 +35,7 @@ export const STYLE_ORDER = [
   'promored',
   'petpink',
   'gutengreen',
+  'booklist',
 ]
 
 // 行业筛选项（"全部"由组件处理）
@@ -1595,6 +1596,79 @@ export const USAGES: UsageDef[] = [
 `
     },
   },
+  // 书单蓝 · 书单推荐：清新天蓝 + 彩色圆点点缀（复刻 135「书单推荐一键排版」）
+  {
+    id: 'bookrec',
+    name: '书单推荐',
+    industries: ['阅读', '文学'],
+    shell: (t) => {
+      const head = `
+<div style="margin:0 0 22px; padding:8px 22px; background:#ebf9fe; border:1px solid #c7ebfa; border-radius:20px; text-align:center; color:#2b8fc4; font-size:14px; line-height:1.6;">
+  <span style="font-weight:700; color:#47bdeb;">点击蓝字</span>，关注我们，获取更多书单推荐
+</div>`
+      const foot = `
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#ffffff; background:#47bdeb; border-radius:8px; padding:8px 0; max-width:40%; margin-left:auto; margin-right:auto;">END</div>
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px dashed #c7ebfa; border-radius:10px; background:#ffffff; text-align:center; color:#3a6b85; font-size:14px; line-height:1.8;">
+  感谢你读到这里 · 书单推荐<br/>愿每一本好书，都被懂它的人遇见
+</div>
+<div style="margin:20px 0 4px; padding:16px; background:#f5fcff; border-radius:14px; border-top:3px solid #47bdeb; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#2b8fc4; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#61c9f3; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>`
+      return { head, foot }
+    },
+    scaffold: (t) => {
+      const heroImg =
+        'data:image/svg+xml,' +
+        encodeURIComponent(
+          '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#47bdeb"/><stop offset="1" stop-color="#ebf9fe"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/><text x="50%" y="50%" font-family="sans-serif" font-size="22" fill="#ffffff" text-anchor="middle">书单推荐</text><text x="50%" y="72%" font-family="sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">Replace with your photo</text></svg>',
+        )
+      return `
+<div style="margin:0 0 22px; padding:8px 22px; background:#ebf9fe; border:1px solid #c7ebfa; border-radius:20px; text-align:center; color:#2b8fc4; font-size:14px; line-height:1.6;">
+  <span style="font-weight:700; color:#47bdeb;">点击蓝字</span>，关注我们，获取更多书单推荐
+</div>
+
+<h1>${t}</h1>
+
+<p>总有一本书，在某个深夜接住了你。这一份书单，不按销量排行，只按「读过的人，心里真正被触动过」来选。愿你也能在其中，遇见那本对的书。</p>
+
+<h2>本期书单</h2>
+
+<div style="margin:18px 0 22px; padding:8px; background:#ebf9fe; border:2px solid #c7ebfa; border-radius:16px;">
+  <img src="${heroImg}" alt="书单配图" style="width:100%; border-radius:12px; display:block;" />
+</div>
+
+<p>本期书单收录 8 本近期高口碑新书，从文学小说到自我成长，覆盖不同阅读口味。每一本都附一句真实读后感，不吹不黑，只说读过的人最想说的话。</p>
+
+<h2>选书标准</h2>
+
+<p>不追热点，不堆头衔。我们更看重一本书能不能陪你度过一段难熬的日子，能不能在某个瞬间，让你觉得「原来不止我这样想」。</p>
+
+<h2>阅读建议</h2>
+
+<p>慢一点没关系。一本书的价值，往往不在读完的那刻，而在某天你突然想起其中一句话、并被它接住的时候。给自己留一点空白，让书慢慢走进来。</p>
+
+<blockquote><p>读书的意义，大概是用别人的故事，把自己的心事说清楚。</p></blockquote>
+
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#ffffff; background:#47bdeb; border-radius:8px; padding:8px 0; max-width:40%; margin-left:auto; margin-right:auto;">END</div>
+
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px dashed #c7ebfa; border-radius:10px; background:#ffffff; text-align:center; color:#3a6b85; font-size:14px; line-height:1.8;">
+  感谢你读到这里 · 书单推荐<br/>愿每一本好书，都被懂它的人遇见
+</div>
+
+<div style="margin:20px 0 4px; padding:16px; background:#f5fcff; border-radius:14px; border-top:3px solid #47bdeb; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#2b8fc4; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#61c9f3; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>
+`
+    },
+  },
 ]
 
 export interface TemplateDef {
@@ -1651,6 +1725,7 @@ export const TEMPLATES: TemplateDef[] = [
   { id: 't40', styleId: 'promored', usageId: 'yearend', industries: ['电商', '零售'] },
   { id: 't41', styleId: 'petpink', usageId: 'petcare', industries: ['生活', '媒体'] },
   { id: 't42', styleId: 'gutengreen', usageId: 'guten', industries: ['节气', '生活'] },
+  { id: 't43', styleId: 'booklist', usageId: 'bookrec', industries: ['阅读', '文学'] },
 ]
 
 // 便捷查询
