@@ -505,6 +505,60 @@ export function wechatifyHtml(html: string): string {
   }
   cleanInterBlockWhitespace(doc.body)
 
+  // 5.5) 删除「空块级元素」与「段间裸 <br>」——它们大多来自从 Word / 网页 / 备忘录
+  //      粘贴时的多余空行，微信会渲染成「不对的空行」。
+  //      - 空块：去掉 br/&nbsp/空白后无可见文字、且不含图片/表格等实质内容。
+  //        占位图片（img/table/svg）保留；div 额外排除带 background/border/border-radius
+  //        的装饰容器（如分隔线 div），避免误删样式。
+  //      - 段间裸 <br>：仅删 <section> 直接子级（块本身已有间距，无需额外换行）。
+  //        模板外壳（foot 二维码块「关注我们<br/>微信号」等）的 <br> 在 div 内，
+  //        不是 section 直接子，保留原意换行。
+  const KEEP_BLOCK_TAGS = new Set([
+    'img', 'br', 'hr', 'td', 'th', 'tr', 'table', 'section',
+    'span', 'a', 'strong', 'em', 'mark', 'small', 'code',
+  ])
+  function isEmptyBlock(el: HTMLElement): boolean {
+    const tag = el.tagName.toLowerCase()
+    if (KEEP_BLOCK_TAGS.has(tag)) return false
+    if (el.querySelector('img, table, svg, hr')) return false
+    const vis = (el.textContent || '')
+      .replace(/ /g, '')
+      .replace(/\s+/g, '')
+      .trim()
+    if (vis.length > 0) return false
+    // 装饰性 div（带底色/边框）即便无文字也保留，可能是分隔线/色块
+    if (tag === 'div') {
+      const s = el.style
+      if (
+        s.backgroundColor ||
+        s.background ||
+        s.border ||
+        s.borderTop ||
+        s.borderBottom ||
+        s.borderLeft ||
+        s.borderRight ||
+        s.borderRadius
+      ) {
+        return false
+      }
+    }
+    return true
+  }
+  // 从内到外循环删除，避免删了内层空块后外层变空却漏删
+  let removed = true
+  let guard = 0
+  while (removed && guard++ < 12) {
+    removed = false
+    doc.body.querySelectorAll<HTMLElement>('*').forEach((el) => {
+      if (isEmptyBlock(el)) {
+        el.remove()
+        removed = true
+      }
+    })
+  }
+  // 段间裸 <br>（仅 section 直接子，避免误删模板外壳块内换行）
+  doc.body.querySelectorAll<HTMLElement>('section > br').forEach((b) => b.remove())
+
   // 6) 去掉套模板时用于标记外壳的 data-meipi-shell 容器（保留其子节点），
   //    让复制产物只剩「正文 + 新外壳装饰」，无多余的包裹层进入公众号。
   doc.body.querySelectorAll<HTMLElement>('[data-meipi-shell]').forEach((el) => {
