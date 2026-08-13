@@ -34,6 +34,7 @@ export const STYLE_ORDER = [
   'readinggreen',
   'promored',
   'petpink',
+  'gutengreen',
 ]
 
 // 行业筛选项（"全部"由组件处理）
@@ -1521,6 +1522,79 @@ export const USAGES: UsageDef[] = [
 `
     },
   },
+  // 谷雨绿 · 谷雨时节：春意嫩绿 + 浅绿底胶囊（复刻 135「谷雨时节一键排版」）
+  {
+    id: 'guten',
+    name: '谷雨时节',
+    industries: ['节气', '生活'],
+    shell: (t) => {
+      const head = `
+<div style="margin:0 0 22px; padding:8px 22px; background:#e7f7d6; border:1px solid #cae6b2; border-radius:20px; text-align:center; color:#4f7a2c; font-size:14px; line-height:1.6;">
+  <span style="font-weight:700; color:#6da534;">点击蓝字</span>，关注我们，获取更多节气美文
+</div>`
+      const foot = `
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#4f7a2c; background:#e7f7d6; border-radius:8px; padding:8px 0; max-width:40%; margin-left:auto; margin-right:auto;">END</div>
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px solid #cae6b2; border-radius:10px; background:#f4fbed; text-align:center; color:#5c6b48; font-size:14px; line-height:1.8;">
+  感谢你读到这里 · 谷雨时节<br/>愿每一个节气，都被温柔收藏
+</div>
+<div style="margin:20px 0 4px; padding:16px; background:#f9fef4; border-radius:14px; border-top:3px solid #6da534; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#6da534; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#8ab85c; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>`
+      return { head, foot }
+    },
+    scaffold: (t) => {
+      const heroImg =
+        'data:image/svg+xml,' +
+        encodeURIComponent(
+          '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6da534"/><stop offset="1" stop-color="#e7f7d6"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/><text x="50%" y="50%" font-family="sans-serif" font-size="22" fill="#ffffff" text-anchor="middle">谷雨时节</text><text x="50%" y="72%" font-family="sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">Replace with your photo</text></svg>',
+        )
+      return `
+<div style="margin:0 0 22px; padding:8px 22px; background:#e7f7d6; border:1px solid #cae6b2; border-radius:20px; text-align:center; color:#4f7a2c; font-size:14px; line-height:1.6;">
+  <span style="font-weight:700; color:#6da534;">点击蓝字</span>，关注我们，获取更多节气美文
+</div>
+
+<h1>${t}</h1>
+
+<p>谷雨，是春天最后一个节气。雨生百谷，润物无声，田埂上的新绿正一寸寸漫上来。这一篇，想把节气的安静与丰盈，慢慢讲给你听。</p>
+
+<h2>节气物候</h2>
+
+<p>一候萍始生，二候鸣鸠拂其羽，三候戴胜降于桑。水中的浮萍、林间的布谷、树上的戴胜，都在告诉你：该准备播种了。</p>
+
+<div style="margin:18px 0 22px; padding:8px; background:#f4fbed; border:2px solid #cae6b2; border-radius:16px;">
+  <img src="${heroImg}" alt="谷雨配图" style="width:100%; border-radius:12px; display:block;" />
+</div>
+
+<h2>饮食养生</h2>
+
+<p>谷雨前后，香椿最嫩，谷雨茶最香。少酸多甘，吃些山药、薏米，把一冬积下的湿寒，慢慢排出体外。</p>
+
+<h2>起居调护</h2>
+
+<p>雨水渐多，记得防潮保暖；柳絮纷飞，过敏体质更要注意。早睡早起，跟着太阳的节奏，把身体调到春天的频道。</p>
+
+<blockquote><p>节气从不为谁停留，却把每一份温柔，都写进了草木的生长里。</p></blockquote>
+
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#4f7a2c; background:#e7f7d6; border-radius:8px; padding:8px 0; max-width:40%; margin-left:auto; margin-right:auto;">END</div>
+
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px solid #cae6b2; border-radius:10px; background:#f4fbed; text-align:center; color:#5c6b48; font-size:14px; line-height:1.8;">
+  感谢你读到这里 · 谷雨时节<br/>愿每一个节气，都被温柔收藏
+</div>
+
+<div style="margin:20px 0 4px; padding:16px; background:#f9fef4; border-radius:14px; border-top:3px solid #6da534; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#6da534; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#8ab85c; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>
+`
+    },
+  },
 ]
 
 export interface TemplateDef {
@@ -1576,6 +1650,7 @@ export const TEMPLATES: TemplateDef[] = [
   { id: 't39', styleId: 'readinggreen', usageId: 'readingday', industries: ['读书', '文化'] },
   { id: 't40', styleId: 'promored', usageId: 'yearend', industries: ['电商', '零售'] },
   { id: 't41', styleId: 'petpink', usageId: 'petcare', industries: ['生活', '媒体'] },
+  { id: 't42', styleId: 'gutengreen', usageId: 'guten', industries: ['节气', '生活'] },
 ]
 
 // 便捷查询
