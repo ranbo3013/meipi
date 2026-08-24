@@ -38,6 +38,7 @@ export const STYLE_ORDER = [
   'booklist',
   'annivgold',
   'dadblue',
+  'teachergreen',
 ]
 
 // 行业筛选项（"全部"由组件处理）
@@ -1808,10 +1809,82 @@ export const USAGES: UsageDef[] = [
 </div>
 
 <div style="margin:20px 0 4px; padding:16px; background:#f2f9fc; border-radius:14px; border-top:3px solid #055698; display:flex; align-items:center; gap:16px;">
+      <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+      <div style="flex:1;">
+        <div style="font-size:16px; font-weight:700; color:#055698; margin-bottom:4px;">${t}</div>
+        <div style="font-size:13px; color:#1a7fc4; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+      </div>
+    </div>
+`
+    },
+  },
+  {
+    id: 'teachersday',
+    name: '教师节',
+    industries: ['教育', '亲情'],
+    shell: (t) => {
+      const head = `
+<div style="margin:0 0 22px; padding:8px 22px; background:#eef7f0; border:1px solid #b7e4a0; border-radius:20px; text-align:center; color:#1f7a4d; font-size:14px; line-height:1.6;">
+  <span style="font-weight:700; color:#1f7a4d;">点击蓝字</span>，关注我们，致敬每一位引路人
+</div>`
+      const foot = `
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#ffffff; background:#1f7a4d; border-radius:8px; padding:8px 0; max-width:40%; margin-left:auto; margin-right:auto;">END</div>
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px dashed #b7e4a0; border-radius:10px; background:#eef7f0; text-align:center; color:#3a5a40; font-size:14px; line-height:1.8;">
+  感谢您读到这里 · 教师节<br/>🌻 愿每一份师恩，都被温柔铭记
+</div>
+<div style="margin:20px 0 4px; padding:16px; background:#eef7f0; border-radius:14px; border-top:3px solid #f4c430; display:flex; align-items:center; gap:16px;">
   <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
   <div style="flex:1;">
-    <div style="font-size:16px; font-weight:700; color:#055698; margin-bottom:4px;">${t}</div>
-    <div style="font-size:13px; color:#1a7fc4; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+    <div style="font-size:16px; font-weight:700; color:#1f7a4d; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#2f9e44; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>`
+      return { head, foot }
+    },
+    scaffold: (t) => {
+      const heroImg =
+        'data:image/svg+xml,' +
+        encodeURIComponent(
+          '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f7a4d"/><stop offset="1" stop-color="#b7e4a0"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/><text x="50%" y="46%" font-family="sans-serif" font-size="22" fill="#ffffff" text-anchor="middle">教师节快乐</text><text x="50%" y="70%" font-family="sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">Replace with your photo</text></svg>',
+        )
+      return `
+<div style="margin:0 0 22px; padding:8px 22px; background:#eef7f0; border:1px solid #b7e4a0; border-radius:20px; text-align:center; color:#1f7a4d; font-size:14px; line-height:1.6;">
+  <span style="font-weight:700; color:#1f7a4d;">点击蓝字</span>，关注我们，致敬每一位引路人
+</div>
+
+<h1>${t}</h1>
+
+<p>总有一些人，把最好的年华留在了讲台；总有一些话，多年以后才听懂其中的分量。老师这两个字，从来不只是职业，更是一种把无数陌生孩子推向远方的温柔执念。</p>
+
+<h2>01 · 春风化雨，铭记师恩</h2>
+
+<div style="margin:18px 0 22px; padding:8px; background:#eef7f0; border:2px solid #b7e4a0; border-radius:16px;">
+  <img src="${heroImg}" alt="教师节配图" style="width:100%; border-radius:12px; display:block;" />
+</div>
+
+<p>那时候嫌黑板上的字太小、嫌放学铃太慢，后来才明白，那一方教室装下的，是一整个被耐心浇灌的夏天。🌻</p>
+
+<h2>02 · 三尺讲台，一生守候</h2>
+
+<p>他们未必记得每一个学生的名字，却记得每一种懵懂背后该怎样点亮。一支粉笔写尽春秋，两袖清风却给了我们希望。</p>
+
+<h2>03 · 教师节快乐</h2>
+
+<p>这个节日，不必隆重。一条微信、一束向日葵、一句迟到的"谢谢您"，就足够让那位站在门口目送我们的人，偷偷红了眼眶。</p>
+
+<blockquote><p>师恩如光，不一定耀眼，却始终照亮前方。</p></blockquote>
+
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#ffffff; background:#1f7a4d; border-radius:8px; padding:8px 0; max-width:40%; margin-left:auto; margin-right:auto;">END</div>
+
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px dashed #b7e4a0; border-radius:10px; background:#eef7f0; text-align:center; color:#3a5a40; font-size:14px; line-height:1.8;">
+  感谢您读到这里 · 教师节<br/>🌻 愿每一份师恩，都被温柔铭记
+</div>
+
+<div style="margin:20px 0 4px; padding:16px; background:#eef7f0; border-radius:14px; border-top:3px solid #f4c430; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#1f7a4d; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#2f9e44; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
   </div>
 </div>
 `
@@ -1878,6 +1951,7 @@ export const TEMPLATES: TemplateDef[] = [
   { id: 't45', styleId: 'dadblue', usageId: 'fathersday', industries: ['亲情', '家庭'] },
   { id: 't46', styleId: 'smartedu', usageId: 'activity', industries: ['教育'] },
   { id: 't47', styleId: 'smartedu_green', usageId: 'back2school', industries: ['教育'] },
+  { id: 't48', styleId: 'teachergreen', usageId: 'teachersday', industries: ['教育', '亲情'] },
 ]
 
 // 便捷查询

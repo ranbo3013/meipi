@@ -469,7 +469,8 @@ body {
 .theme-dropdown {
   position: absolute;
   top: calc(100% + 6px);
-  right: 0;
+  left: -260px;
+  right: auto;
   z-index: 999;
   background: var(--panel);
   border: 1px solid var(--line);
