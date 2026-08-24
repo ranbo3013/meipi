@@ -1876,6 +1876,8 @@ export const TEMPLATES: TemplateDef[] = [
   { id: 't43', styleId: 'booklist', usageId: 'bookrec', industries: ['阅读', '文学'] },
   { id: 't44', styleId: 'annivgold', usageId: 'anniversary', industries: ['教育', '活动'] },
   { id: 't45', styleId: 'dadblue', usageId: 'fathersday', industries: ['亲情', '家庭'] },
+  { id: 't46', styleId: 'smartedu', usageId: 'activity', industries: ['教育'] },
+  { id: 't47', styleId: 'smartedu_green', usageId: 'back2school', industries: ['教育'] },
 ]
 
 // 便捷查询

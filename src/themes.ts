@@ -8,10 +8,15 @@
 
 export type StyleMap = Record<string, string>
 
+/** 主题大类：festival 节日 / season 节气 / industry 行业 / general 通用 */
+export type ThemeCategory = 'festival' | 'season' | 'industry' | 'general'
+
 export interface Theme {
   id: string
   name: string
   description: string
+  /** 主题归类（用于主题选择器分级展示） */
+  category: ThemeCategory
   /** 预览画布外层底色（桌面背景） */
   pageBg: string
   /** 文章容器 <section> 的样式 */
@@ -147,6 +152,7 @@ export const themes: Theme[] = [
     id: 'literary',
     name: '文艺',
     description: '衬线字体 · 米白底 · 墨绿赭石点缀，清新高级',
+    category: "general",
     pageBg: '#f5f1e8',
     container: {
       background: '#fffdf8',
@@ -199,6 +205,7 @@ export const themes: Theme[] = [
     id: 'minimal',
     name: '简约',
     description: '无衬线 · 黑白灰 · 干净利落',
+    category: "general",
     pageBg: '#fafafa',
     container: {
       background: '#ffffff',
@@ -242,6 +249,7 @@ export const themes: Theme[] = [
     id: 'business',
     name: '商务',
     description: '深蓝灰 · 规整专业，适合职场内容',
+    category: "industry",
     pageBg: '#eef1f5',
     container: {
       background: '#ffffff',
@@ -291,6 +299,7 @@ export const themes: Theme[] = [
     id: 'fresh',
     name: '清新',
     description: '薄荷绿 · 圆角留白 · 清爽通透',
+    category: "general",
     pageBg: '#eef7f0',
     container: {
       background: '#ffffff',
@@ -339,6 +348,7 @@ export const themes: Theme[] = [
     id: 'cartoon',
     name: '卡通',
     description: '亮橙明黄 · 圆润活泼 · 童趣亲和',
+    category: "general",
     pageBg: '#fff7ed',
     container: {
       background: '#ffffff',
@@ -389,6 +399,7 @@ export const themes: Theme[] = [
     id: 'fashion',
     name: '时尚',
     description: '黑白金 · 大字留白 · 摩登高冷',
+    category: "general",
     pageBg: '#1c1c1c',
     container: {
       background: '#faf7f2',
@@ -439,6 +450,7 @@ export const themes: Theme[] = [
     id: 'dynamic',
     name: '动态',
     description: '渐变紫蓝 · 光影流动 · 年轻吸睛',
+    category: "general",
     pageBg: '#0f1226',
     container: {
       background: '#ffffff',
@@ -491,6 +503,7 @@ export const themes: Theme[] = [
     id: 'china',
     name: '中国风',
     description: '朱红描金 · 宋体典雅 · 东方韵味',
+    category: "general",
     pageBg: '#f3e9e0',
     container: {
       background: '#fbf6ef',
@@ -541,6 +554,7 @@ export const themes: Theme[] = [
     id: 'clean',
     name: '极简',
     description: '纯白 ample · 细线大字 · 极致留白',
+    category: "general",
     pageBg: '#ffffff',
     container: {
       background: '#ffffff',
@@ -584,6 +598,7 @@ export const themes: Theme[] = [
     id: 'ins',
     name: 'ins风',
     description: '莫兰迪奶油 · 柔和低饱和 · 氛围质感',
+    category: "general",
     pageBg: '#efe9e3',
     container: {
       background: '#fbf8f4',
@@ -633,6 +648,7 @@ export const themes: Theme[] = [
     id: 'solar',
     name: '节气',
     description: '秋香黄绿 · 米白暖底 · 适合节气/节日长图文',
+    category: "season",
     pageBg: '#f6f4eb',
     container: {
       background: '#fffefb',
@@ -684,6 +700,7 @@ export const themes: Theme[] = [
     id: 'solar-summer',
     name: '盛夏',
     description: '粉荷配色 · 清新夏日 · 适合小暑/夏至/荷花主题',
+    category: "season",
     pageBg: '#fff5f7',
     container: {
       background: '#fffafa',
@@ -735,6 +752,7 @@ export const themes: Theme[] = [
     id: 'summer-cool',
     name: '清凉',
     description: '天蓝冰爽 · 夏日公益 · 适合送清凉/慰问活动',
+    category: "general",
     pageBg: '#f0f9ff',
     container: {
       background: '#ffffff',
@@ -786,6 +804,7 @@ export const themes: Theme[] = [
     id: 'spring',
     name: '春日',
     description: '藕荷淡紫 · 薄荷点缀 · 文艺清新，适合散文/随笔/节气',
+    category: "season",
     pageBg: '#f3f0f8',
     container: {
       background: '#fffdfe',
@@ -843,6 +862,7 @@ export const themes: Theme[] = [
     id: 'autumn',
     name: '天凉好个秋',
     description: '清凉蓝 · 渐变标题条 · 秋日文艺，适合散文/随笔/节气',
+    category: "season",
     pageBg: '#eef7f7',
     container: {
       background: '#ffffff',
@@ -900,6 +920,7 @@ export const themes: Theme[] = [
     id: 'campus',
     name: '开学',
     description: '暖黄米色 · 校园开学 · 适合开学通知/校园活动',
+    category: "festival",
     pageBg: '#faf3e8',
     container: {
       background: '#fffbf5',
@@ -950,6 +971,7 @@ export const themes: Theme[] = [
     id: 'freshblue',
     name: '文艺清新',
     description: '淡蓝描边 · 灰调文艺 · 适合散文/随笔/读书',
+    category: "general",
     pageBg: '#eef6fd',
     container: {
       background: '#ffffff',
@@ -999,6 +1021,7 @@ export const themes: Theme[] = [
     id: 'winter',
     name: '寒假旅行',
     description: '天蓝浅底 · 暖黄点缀 · 适合旅行/冬日/节日',
+    category: "festival",
     pageBg: '#eef4fc',
     container: {
       background: '#ffffff',
@@ -1048,6 +1071,7 @@ export const themes: Theme[] = [
     id: 'travel',
     name: '旅行感悟',
     description: '暖橙天蓝 · 双色点缀 · 文艺旅途，适合旅行/随笔/生活方式',
+    category: "industry",
     pageBg: '#f2f6fd',
     container: {
       background: '#ffffff',
@@ -1099,6 +1123,7 @@ export const themes: Theme[] = [
     id: 'cafe',
     name: '咖啡店',
     description: '暖黄蓝灰 · 文艺小清新 · 适合咖啡/探店/生活方式',
+    category: "industry",
     pageBg: '#f6f2ea',
     container: {
       background: '#ffffff',
@@ -1150,6 +1175,7 @@ export const themes: Theme[] = [
     id: 'solar-autumn',
     name: '立秋',
     description: '嫩绿鹅黄 · 浅鹅黄底 · 节气文艺，适合立秋/节气/散文',
+    category: "season",
     pageBg: '#f6f4e8',
     container: {
       background: '#fffdf6',
@@ -1202,6 +1228,7 @@ export const themes: Theme[] = [
     id: 'reportblue',
     name: '报道蓝',
     description: '深蓝浅蓝 · 暖黄点缀 · 政务新闻，适合系列报道/专题/媒体',
+    category: "industry",
     pageBg: '#eef4fb',
     container: {
       background: '#ffffff',
@@ -1252,6 +1279,7 @@ export const themes: Theme[] = [
     id: 'readinggreen',
     name: '读书绿',
     description: '深绿浅绿 · 暖黄点缀 · 读书活动，适合读书日/阅读推广/文化',
+    category: "festival",
     pageBg: '#eef5ec',
     container: {
       background: '#ffffff',
@@ -1302,6 +1330,7 @@ export const themes: Theme[] = [
     id: 'promored',
     name: '好价节红',
     description: '暖红暖黄 · 促销狂欢，适合电商大促/年货节/购物节',
+    category: "festival",
     pageBg: '#fff6f3',
     container: {
       background: '#ffffff',
@@ -1352,6 +1381,7 @@ export const themes: Theme[] = [
     id: 'petpink',
     name: '萌宠粉',
     description: '粉红浅底 · 胶囊标题 · 萌宠养宠，适合宠物/萌宠/生活/母婴',
+    category: "industry",
     pageBg: '#fdeef0',
     container: {
       background: '#fffafa',
@@ -1404,6 +1434,7 @@ export const themes: Theme[] = [
     id: 'gutengreen',
     name: '谷雨绿',
     description: '春意嫩绿 · 浅绿底胶囊标题 · 节气时令，适合节气/散文/随笔/生活',
+    category: "season",
     pageBg: '#eef6e6',
     container: {
       background: '#f9fef4',
@@ -1456,6 +1487,7 @@ export const themes: Theme[] = [
     id: 'booklist',
     name: '书单蓝',
     description: '清新天蓝 · 浅蓝底胶囊标题 · 书单推荐，适合书单/阅读/文学/图书馆',
+    category: "general",
     pageBg: '#eef7fc',
     container: {
       background: '#ffffff',
@@ -1507,6 +1539,7 @@ export const themes: Theme[] = [
     id: 'annivgold',
     name: '校庆金蓝',
     description: '金蓝双色喜庆 · 蓝底白字胶囊标题 · 周年校庆，适合校庆/庆典/活动/纪念日',
+    category: "festival",
     pageBg: '#f7fcff',
     container: {
       background: '#ffffff',
@@ -1558,6 +1591,7 @@ export const themes: Theme[] = [
     id: 'dadblue',
     name: '父爱深蓝',
     description: '父爱深蓝 · 浅蓝底深蓝字标题块 · 父亲节，适合亲情/父亲节/感恩/家庭',
+    category: "festival",
     pageBg: '#eef6fc',
     container: {
       background: '#ffffff',
@@ -1610,6 +1644,7 @@ export const themes: Theme[] = [
     id: 'smartedu',
     name: '智慧教育',
     description: '科技蓝 · 浅蓝底 · 适合教育/智慧课堂/校园/培训',
+    category: "industry",
     pageBg: '#eef6ff',
     container: {
       background: '#ffffff',
@@ -1659,6 +1694,7 @@ export const themes: Theme[] = [
     id: 'smartedu_green',
     name: '智慧教育·开学季',
     description: '深绿浅绿 · 暖黄点缀 · emoji 卡通，适合开学第一课/开学季/校园活动',
+    category: "festival",
     pageBg: '#eaf6e3',
     container: {
       background: '#ffffff',
