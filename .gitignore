@@ -10,6 +10,9 @@ dist/
 # Vite 临时编译产物
 vite.config.ts.timestamp-*.mjs
 
+# 模板交付总览（本地参考文档，不入库）
+overview_*.md
+
 # 操作系统/编辑器
 .DS_Store
 *.log
