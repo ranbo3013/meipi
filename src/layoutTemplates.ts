@@ -40,6 +40,7 @@ export const STYLE_ORDER = [
   'dadblue',
   'teachergreen',
   'midautumn',
+  'schoolfresh',
 ]
 
 // 行业筛选项（"全部"由组件处理）
@@ -1967,6 +1968,82 @@ export const USAGES: UsageDef[] = [
 `
     },
   },
+  {
+    id: 'back2school_fresh',
+    name: '开学季·清新',
+    industries: ['教育'],
+    shell: (t) => {
+      const head = `
+<div style="margin:0 0 22px; padding:8px 22px; background:#f1f9ee; border:1px solid #b7e4a0; border-radius:20px; text-align:center; color:#4a9b5e; font-size:14px; line-height:1.6;">
+  <span style="font-weight:700; color:#4a9b5e;">点击蓝字</span>，关注我们，不错过开学新鲜事
+</div>`
+      const foot = `
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#ffffff; background:#4a9b5e; border-radius:8px; padding:8px 0; max-width:40%; margin-left:auto; margin-right:auto;">END</div>
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px dashed #b7e4a0; border-radius:10px; background:#f1f9ee; text-align:center; color:#3d5a40; font-size:14px; line-height:1.8;">
+  感谢您读到这里 · 开学季<br/>🌱 愿每一颗童心，都向阳生长
+</div>
+<div style="margin:20px 0 4px; padding:16px; background:#f1f9ee; border-radius:14px; border-top:3px solid #ff9f43; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#4a9b5e; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#5faa72; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>`
+      return { head, foot }
+    },
+    scaffold: (t) => {
+      const heroImg =
+        'data:image/svg+xml,' +
+        encodeURIComponent(
+          '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a9b5e"/><stop offset="1" stop-color="#b7e4a0"/></defs><rect width="100%" height="100%" fill="url(#g)"/><text x="50%" y="46%" font-family="sans-serif" font-size="24" fill="#ffffff" text-anchor="middle">开学第一课</text><text x="50%" y="70%" font-family="sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">Replace with your photo</text></svg>',
+        )
+      return `
+<div style="margin:0 0 22px; padding:8px 22px; background:#f1f9ee; border:1px solid #b7e4a0; border-radius:20px; text-align:center; color:#4a9b5e; font-size:14px; line-height:1.6;">
+  <span style="font-weight:700; color:#4a9b5e;">点击蓝字</span>，关注我们，不错过开学新鲜事
+</div>
+
+<h1>${t}</h1>
+
+<p>九月的风吹进校园，带着桂花的香气，也带来了新学期的期待。开学第一课，我们不急着翻开课本，先聊聊成长这件事。</p>
+
+<div style="margin:18px 0 22px; padding:8px; background:#f1f9ee; border:2px solid #b7e4a0; border-radius:16px;">
+  <img src="${heroImg}" alt="开学配图" style="width:100%; border-radius:12px; display:block;" />
+</div>
+
+<h2>01 · 新学期，新气象</h2>
+
+<p>崭新的课本、整齐的课桌、还有窗外透进来的阳光。一切仿佛都在说：又可以重新开始了。🌱</p>
+
+<h2>02 · 立下小目标</h2>
+
+<p>不用太大，读完一本书、学会一道菜、坚持每天早睡。小小的目标，就像埋进土里的种子，认真浇灌，总会发芽。</p>
+
+<h2>03 · 团结友爱，共同成长</h2>
+
+<p>班级是一个小家庭，每个人都是独特又重要的一员。互相帮助、一起努力，才能让这个小集体闪闪发光。</p>
+
+<h2>04 · 童心向未来</h2>
+
+<p>未来的路很长，也许会遇到风雨，但请记得：保持好奇、保持善良、保持勇敢。这就是开学第一课想送给你的礼物。</p>
+
+<blockquote><p>愿每一个孩子，都能在知识的花园里，自由生长。</p></blockquote>
+
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#ffffff; background:#4a9b5e; border-radius:8px; padding:8px 0; max-width:40%; margin-left:auto; margin-right:auto;">END</div>
+
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px dashed #b7e4a0; border-radius:10px; background:#f1f9ee; text-align:center; color:#3d5a40; font-size:14px; line-height:1.8;">
+  感谢您读到这里 · 开学季<br/>🌱 愿每一颗童心，都向阳生长
+</div>
+
+<div style="margin:20px 0 4px; padding:16px; background:#f1f9ee; border-radius:14px; border-top:3px solid #ff9f43; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#4a9b5e; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#5faa72; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>
+`
+    },
+  },
 ]
 
 export interface TemplateDef {
@@ -2030,6 +2107,7 @@ export const TEMPLATES: TemplateDef[] = [
   { id: 't47', styleId: 'smartedu_green', usageId: 'back2school', industries: ['教育'] },
   { id: 't48', styleId: 'teachergreen', usageId: 'teachersday', industries: ['教育', '亲情'] },
   { id: 't49', styleId: 'midautumn', usageId: 'midautumn', industries: ['生活', '文化', '美食'] },
+  { id: 't50', styleId: 'schoolfresh', usageId: 'back2school_fresh', industries: ['教育'] },
 ]
 
 // 便捷查询
