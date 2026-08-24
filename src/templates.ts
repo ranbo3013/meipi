@@ -50,6 +50,13 @@ export interface TemplateGroup {
   items: TemplateItem[]
 }
 
+/** 模板大类：把若干细分组归类管理（如 基础排版 / 智慧教育） */
+export interface TemplateCategory {
+  id: string
+  name: string
+  groups: TemplateGroup[]
+}
+
 // ---------------- 标题 ----------------
 const titleGroup: TemplateGroup = {
   id: 'title',
@@ -389,16 +396,25 @@ const signatureGroup: TemplateGroup = {
   ],
 }
 
-const _templateGroups: TemplateGroup[] = [
+// ---------------- 大类归类 ----------------
+const basicGroups: TemplateGroup[] = [
   titleGroup,
   dividerGroup,
   bodyGroup,
   guideGroup,
   layoutGroup,
   singleImageGroup,
-  smarteduGroup,
   endGroup,
   signatureGroup,
+]
+
+const eduGroups: TemplateGroup[] = [
+  smarteduGroup,
+]
+
+const _templateCategories: TemplateCategory[] = [
+  { id: 'basic', name: '基础排版', groups: basicGroups },
+  { id: 'edu', name: '智慧教育', groups: eduGroups },
 ]
 
 
@@ -425,4 +441,15 @@ function _wrapTemplatesWithTplMarker(
   }))
 }
 
-export const templateGroups: TemplateGroup[] = _wrapTemplatesWithTplMarker(_templateGroups)
+/** 把分类结构递归套上 tpl 标记，得到最终分级数据 */
+function _buildCategories(cats: TemplateCategory[]): TemplateCategory[] {
+  return cats.map((c) => ({
+    ...c,
+    groups: _wrapTemplatesWithTplMarker(c.groups),
+  }))
+}
+
+export const templateCategories: TemplateCategory[] = _buildCategories(_templateCategories)
+
+/** 兼容导出：扁平的所有组（含已套标记），供旧引用方使用 */
+export const templateGroups: TemplateGroup[] = templateCategories.flatMap((c) => c.groups)
