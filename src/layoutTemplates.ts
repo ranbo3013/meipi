@@ -39,6 +39,7 @@ export const STYLE_ORDER = [
   'annivgold',
   'dadblue',
   'teachergreen',
+  'midautumn',
 ]
 
 // 行业筛选项（"全部"由组件处理）
@@ -1890,6 +1891,82 @@ export const USAGES: UsageDef[] = [
 `
     },
   },
+  {
+    id: 'midautumn',
+    name: '中秋节',
+    industries: ['生活', '文化', '美食'],
+    shell: (t) => {
+      const head = `
+<div style="margin:0 0 22px; padding:8px 22px; background:#fdf8e7; border:1px solid #f0d878; border-radius:20px; text-align:center; color:#b8860b; font-size:14px; line-height:1.6;">
+  <span style="font-weight:700; color:#b8860b;">点击蓝字</span>，关注我们，共享月圆好时光
+</div>`
+      const foot = `
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#ffffff; background:#b8860b; border-radius:8px; padding:8px 0; max-width:40%; margin-left:auto; margin-right:auto;">END</div>
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px dashed #f0d878; border-radius:10px; background:#fdf8e7; text-align:center; color:#6b5b3e; font-size:14px; line-height:1.8;">
+  感谢您读到这里 · 中秋节<br/>🌕 月圆人团圆，岁岁皆平安
+</div>
+<div style="margin:20px 0 4px; padding:16px; background:#fdf8e7; border-radius:14px; border-top:3px solid #f0d878; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#b8860b; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#9a7b2e; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>`
+      return { head, foot }
+    },
+    scaffold: (t) => {
+      const heroImg =
+        'data:image/svg+xml,' +
+        encodeURIComponent(
+          '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b8860b"/><stop offset="1" stop-color="#f0d878"/></defs><rect width="100%" height="100%" fill="url(#g)"/><text x="50%" y="46%" font-family="sans-serif" font-size="24" fill="#ffffff" text-anchor="middle">中秋节快乐</text><text x="50%" y="70%" font-family="sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">Replace with your photo</text></svg>',
+        )
+      return `
+<div style="margin:0 0 22px; padding:8px 22px; background:#fdf8e7; border:1px solid #f0d878; border-radius:20px; text-align:center; color:#b8860b; font-size:14px; line-height:1.6;">
+  <span style="font-weight:700; color:#b8860b;">点击蓝字</span>，关注我们，共享月圆好时光
+</div>
+
+<h1>${t}</h1>
+
+<p>月圆之夜，桂花飘香。无论身在何处，抬头看见同一轮明月，就仿佛回到了那个熟悉的屋檐下。中秋节，是中国人心底最温柔的一场团圆。</p>
+
+<div style="margin:18px 0 22px; padding:12px; background:#fdf8e7; border:2px solid #f0d878; border-radius:16px;">
+  <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; padding:0 4px;">
+    <span style="font-size:14px; font-weight:700; color:#b8860b;">🗓 农历八月十五</span>
+    <span style="font-size:12px; color:#9a7b2e;">中秋 · 团圆</span>
+  </div>
+  <img src="${heroImg}" alt="中秋节配图" style="width:100%; border-radius:12px; display:block;" />
+</div>
+
+<h2>🌕 赏月 · 寄一份相思</h2>
+
+<p>古人不见今时月，今月曾经照古人。一轮圆月，照过无数离别，也照亮无数归途。今晚若不能相聚，就托月光捎一句：我很好，勿念。</p>
+
+<h2>🥮 食饼 · 咬一口圆满</h2>
+
+<p>月饼圆圆，甜的是馅料，暖的是人情。一口咬下去，是莲蓉的绵密，也是小时候外婆切饼时那份郑重其事。🐇</p>
+
+<h2>🏮 灯影 · 守一盏灯火</h2>
+
+<p>窗外灯笼摇曳，屋内茶烟袅袅。最好的中秋，不是宴席多丰盛，而是身边有人陪、远方有人念、心里有爱在。</p>
+
+<blockquote><p>月光所至，皆是故乡；双脚所踏，皆是生活。</p></blockquote>
+
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#ffffff; background:#b8860b; border-radius:8px; padding:8px 0; max-width:40%; margin-left:auto; margin-right:auto;">END</div>
+
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px dashed #f0d878; border-radius:10px; background:#fdf8e7; text-align:center; color:#6b5b3e; font-size:14px; line-height:1.8;">
+  感谢您读到这里 · 中秋节<br/>🌕 月圆人团圆，岁岁皆平安
+</div>
+
+<div style="margin:20px 0 4px; padding:16px; background:#fdf8e7; border-radius:14px; border-top:3px solid #f0d878; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#b8860b; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#9a7b2e; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>
+`
+    },
+  },
 ]
 
 export interface TemplateDef {
@@ -1952,6 +2029,7 @@ export const TEMPLATES: TemplateDef[] = [
   { id: 't46', styleId: 'smartedu', usageId: 'activity', industries: ['教育'] },
   { id: 't47', styleId: 'smartedu_green', usageId: 'back2school', industries: ['教育'] },
   { id: 't48', styleId: 'teachergreen', usageId: 'teachersday', industries: ['教育', '亲情'] },
+  { id: 't49', styleId: 'midautumn', usageId: 'midautumn', industries: ['生活', '文化', '美食'] },
 ]
 
 // 便捷查询
