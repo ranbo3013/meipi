@@ -41,6 +41,7 @@ export const STYLE_ORDER = [
   'teachergreen',
   'midautumn',
   'schoolfresh',
+  'schoolguide',
 ]
 
 // 行业筛选项（"全部"由组件处理）
@@ -1970,7 +1971,7 @@ export const USAGES: UsageDef[] = [
   },
   {
     id: 'back2school_fresh',
-    name: '开学季·清新',
+    name: '开学季清新',
     industries: ['教育'],
     shell: (t) => {
       const head = `
@@ -2044,6 +2045,86 @@ export const USAGES: UsageDef[] = [
 `
     },
   },
+  {
+    id: 'schoolguide',
+    name: '新生入学',
+    industries: ['教育'],
+    shell: (t) => {
+      const head = `
+<div style="margin:0 0 22px; padding:8px 22px; background:#f5faf6; border:1px solid #d4e8d4; border-radius:20px; text-align:center; color:#5a9b6e; font-size:14px; line-height:1.6;">
+  <span style="font-weight:700; color:#5a9b6e;">点击蓝字</span>，关注我们，获取完整新生攻略
+</div>`
+      const foot = `
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#ffffff; background:#5a9b6e; border-radius:8px; padding:8px 0; max-width:40%; margin-left:auto; margin-right:auto;">END</div>
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px dashed #d4e8d4; border-radius:10px; background:#f5faf6; text-align:center; color:#3d5a40; font-size:14px; line-height:1.8;">
+  感谢您读到这里 · 新生入学指南<br/>🎒 愿你在这里，开启一段精彩的旅程
+</div>
+<div style="margin:20px 0 4px; padding:16px; background:#f5faf6; border-radius:14px; border-top:3px solid #5a9b6e; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#5a9b6e; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#6aaa7d; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>`
+      return { head, foot }
+    },
+    scaffold: (t) => {
+      const heroImg =
+        'data:image/svg+xml,' +
+        encodeURIComponent(
+          '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5a9b6e"/><stop offset="1" stop-color="#d4e8d4"/></defs><rect width="100%" height="100%" fill="url(#g)"/><text x="50%" y="46%" font-family="sans-serif" font-size="24" fill="#ffffff" text-anchor="middle">新生大礼包</text><text x="50%" y="70%" font-family="sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">Replace with your photo</text></svg>',
+        )
+      return `
+<div style="margin:0 0 22px; padding:8px 22px; background:#f5faf6; border:1px solid #d4e8d4; border-radius:20px; text-align:center; color:#5a9b6e; font-size:14px; line-height:1.6;">
+  <span style="font-weight:700; color:#5a9b6e;">点击蓝字</span>，关注我们，获取完整新生攻略
+</div>
+
+<h1>${t}</h1>
+
+<p>欢迎来到新校园！这里有一份为你准备的「新生大礼包」，从报到流程到生活指南，一站式帮你搞定入学那些事儿。</p>
+
+<div style="margin:18px 0 22px; padding:8px; background:#f5faf6; border:2px solid #d4e8d4; border-radius:16px;">
+  <img src="${heroImg}" alt="新生入学配图" style="width:100%; border-radius:12px; display:block;" />
+</div>
+
+<h2>🎒 报到流程</h2>
+
+<p>带上录取通知书、身份证和必要材料，按指引完成注册、缴费、宿舍分配。建议提前一天到校，避开高峰，从容办理。</p>
+
+<h2>🏠 宿舍生活</h2>
+
+<p>宿舍是大学生活的第一站。准备好床上用品、收纳神器，和室友一起制定值日表，营造良好的生活氛围。</p>
+
+<h2>🍽 食堂与校园卡</h2>
+
+<p>校园卡是吃饭、借书、门禁的万能钥匙。先充值、再绑定手机，去食堂转一圈，找到属于你的「宝藏窗口」。</p>
+
+<h2>📚 教学楼 & 图书馆</h2>
+
+<p>熟悉上课路线，记住图书馆开放时间。一个好的座位，往往决定了一节课的效率和一学期的成绩。</p>
+
+<h2>🌳 周边环境</h2>
+
+<p>超市、快递点、医院、公交站……提前踩点，关键时刻不慌张。校园地图建议保存到手机相册。</p>
+
+<blockquote><p>新的起点，不必慌张。一步一步走，你终会找到属于自己的节奏。</p></blockquote>
+
+<div style="margin:32px 0 16px; text-align:center; font-size:16px; font-weight:700; letter-spacing:4px; color:#ffffff; background:#5a9b6e; border-radius:8px; padding:8px 0; max-width:40%; margin-left:auto; margin-right:auto;">END</div>
+
+<div style="margin:14px auto 22px; max-width:84%; padding:14px 16px; border:2px dashed #d4e8d4; border-radius:10px; background:#f5faf6; text-align:center; color:#3d5a40; font-size:14px; line-height:1.8;">
+  感谢您读到这里 · 新生入学指南<br/>🎒 愿你在这里，开启一段精彩的旅程
+</div>
+
+<div style="margin:20px 0 4px; padding:16px; background:#f5faf6; border-radius:14px; border-top:3px solid #5a9b6e; display:flex; align-items:center; gap:16px;">
+  <img src="${QR_CODE_BASE64}" alt="公众号二维码" style="width:84px; height:84px; border-radius:8px; display:block; flex:0 0 84px; object-fit:cover;" />
+  <div style="flex:1;">
+    <div style="font-size:16px; font-weight:700; color:#5a9b6e; margin-bottom:4px;">${t}</div>
+    <div style="font-size:13px; color:#6aaa7d; line-height:1.6;">长按识别二维码 关注我们<br/>微信号：ranbo4615</div>
+  </div>
+</div>
+`
+    },
+  },
 ]
 
 export interface TemplateDef {
@@ -2108,6 +2189,7 @@ export const TEMPLATES: TemplateDef[] = [
   { id: 't48', styleId: 'teachergreen', usageId: 'teachersday', industries: ['教育', '亲情'] },
   { id: 't49', styleId: 'midautumn', usageId: 'midautumn', industries: ['生活', '文化', '美食'] },
   { id: 't50', styleId: 'schoolfresh', usageId: 'back2school_fresh', industries: ['教育'] },
+  { id: 't51', styleId: 'schoolguide', usageId: 'schoolguide', industries: ['教育'] },
 ]
 
 // 便捷查询
