@@ -303,6 +303,37 @@ const smarteduGroup: TemplateGroup = {
       render: () =>
         `<table style="width:100%;border-collapse:collapse;margin:0;background:#ffffff;"><tr><td style="width:58%;padding:22px 18px;vertical-align:top;background:#f5faff;"><div style="font-size:12px;color:#1e6ee6;font-weight:700;letter-spacing:1px;">KNOW</div><div style="font-size:13px;color:#333333;font-weight:600;margin-top:4px;">智慧教育篇</div><div style="margin:12px 0 10px;color:#1e6ee6;font-size:16px;letter-spacing:2px;font-weight:700;">/////</div><h2 style="font-size:21px;font-weight:700;color:#1a1a1a;margin:0;line-height:1.35;letter-spacing:1px;">智慧课堂赋能<br/>让教学更有温度</h2></td><td style="width:42%;padding:0;vertical-align:top;background:#f5faff;"><img src="${IMG_PH}" alt="头图" style="width:100%;height:auto;display:block;"/></td></tr></table><table style="width:100%;border-collapse:collapse;margin:18px 0;"><tr><td style="padding:12px 18px;background:#1e6ee6;color:#ffffff;font-size:20px;font-weight:700;letter-spacing:2px;">EDUCATION</td></tr></table><table style="width:100%;border-collapse:collapse;margin:18px 0;"><tr><td style="width:4px;background:#1e6ee6;"></td><td style="padding:14px 16px;background:#f8fbff;color:#333333;font-size:15px;line-height:1.9;">教育数字化是新时代教育改革发展的核心趋势，是提升课堂教学效率、优化育人体系、提高教学质量的重要抓手。长期以来，我校高度重视教师信息化教学能力提升，常态化开展信息化教学教研、课堂打磨、案例打磨工作，收获了丰硕的教学实践成果。</td></tr></table><table style="width:100%;border-collapse:collapse;margin:22px 0;"><tr><td style="width:44px;height:44px;background:#1e6ee6;color:#ffffff;text-align:center;font-size:18px;font-weight:700;vertical-align:middle;">01</td><td style="padding:0 14px;background:#e8f4ff;color:#1e6ee6;font-size:17px;font-weight:700;vertical-align:middle;letter-spacing:1px;">优质案例荟萃</td><td style="width:44px;background:#e8f4ff;vertical-align:middle;text-align:center;"><span style="color:#1e6ee6;font-size:18px;letter-spacing:2px;">···</span></td></tr></table><figure style="margin:18px 0;text-align:center;"><img src="${IMG_PH}" alt="配图" style="max-width:100%;height:auto;display:inline-block;"/></figure>`,
     },
+    // ---------------- 开学季绿变体（emoji 卡通 · 全内联 · 公众号兼容） ----------------
+    {
+      id: 'term_hero',
+      name: '开学季头图',
+      render: () =>
+        `<table style="width:100%;border-collapse:collapse;margin:0;background:#f1f9ee;"><tr><td style="padding:26px 20px;vertical-align:top;"><div style="font-size:30px;line-height:1;text-align:center;">🌿☀️📚</div><h2 style="font-size:23px;font-weight:700;color:#2f9e44;text-align:center;margin:12px 0 6px;letter-spacing:2px;line-height:1.4;">开学第一课<br/>童心向未来</h2><div style="display:table;margin:10px auto 0;background:#ffd23c;color:#5a3d00;font-size:14px;font-weight:700;padding:6px 16px;border-radius:20px;letter-spacing:1px;">🌟 阳光小学·开学第一课</div></td></tr></table>`,
+    },
+    {
+      id: 'term_button',
+      name: '绿色圆角按钮',
+      render: () =>
+        `<table style="width:100%;border-collapse:collapse;margin:18px 0;"><tr><td style="text-align:center;"><span style="display:inline-block;background:#2f9e44;color:#ffffff;font-size:16px;font-weight:700;padding:12px 28px;border-radius:24px;letter-spacing:1px;">📌 主题班会，收心归位</span></td></tr></table>`,
+    },
+    {
+      id: 'term_card',
+      name: '虚线孔正文卡',
+      render: () =>
+        `<table style="width:100%;border-collapse:collapse;margin:18px 0;background:#ffffff;"><tr><td style="width:6px;padding:0;background:#ffd23c;"></td><td style="padding:16px 18px;border:1px dashed #b7e4a0;border-radius:10px;color:#333333;font-size:15px;line-height:1.95;background:#fafdf8;">新的一学期开始了，孩子们带着假期的收获回到校园。愿每一颗童心都被温柔以待，愿每一次努力都有迹可循。收好书包、调好作息，我们一起，向未来出发。🌱</td></tr></table>`,
+    },
+    {
+      id: 'term_illu',
+      name: '卡通插画大图',
+      render: () =>
+        `<figure style="margin:18px 0;text-align:center;"><img src="${IMG_PH}" alt="卡通插画" style="max-width:100%;height:auto;display:inline-block;border-radius:12px;"/><div style="margin-top:8px;font-size:13px;color:#8aa37e;">🌞 窗边的书本与咖啡，开学的仪式感 🌵</div></figure>`,
+    },
+    {
+      id: 'term_full',
+      name: '开学季完整版式',
+      render: () =>
+        `<table style="width:100%;border-collapse:collapse;margin:0;background:#f1f9ee;"><tr><td style="padding:26px 20px;vertical-align:top;"><div style="font-size:28px;line-height:1;text-align:center;">🌿☀️📚</div><h2 style="font-size:23px;font-weight:700;color:#2f9e44;text-align:center;margin:12px 0 6px;letter-spacing:2px;line-height:1.4;">开学第一课<br/>童心向未来</h2><div style="display:table;margin:10px auto 0;background:#ffd23c;color:#5a3d00;font-size:14px;font-weight:700;padding:6px 16px;border-radius:20px;letter-spacing:1px;">🌟 阳光小学·开学第一课</div></td></tr></table><table style="width:100%;border-collapse:collapse;margin:18px 0;background:#ffffff;"><tr><td style="width:6px;padding:0;background:#ffd23c;"></td><td style="padding:16px 18px;border:1px dashed #b7e4a0;border-radius:10px;color:#333333;font-size:15px;line-height:1.95;background:#fafdf8;">新的一学期开始了，孩子们带着假期的收获回到校园。愿每一颗童心都被温柔以待，愿每一次努力都有迹可循。收好书包、调好作息，我们一起，向未来出发。🌱</td></tr></table><table style="width:100%;border-collapse:collapse;margin:18px 0;"><tr><td style="text-align:center;"><span style="display:inline-block;background:#2f9e44;color:#ffffff;font-size:16px;font-weight:700;padding:12px 28px;border-radius:24px;letter-spacing:1px;">📌 主题班会，收心归位</span></td></tr></table><figure style="margin:18px 0;text-align:center;"><img src="${IMG_PH}" alt="卡通插画" style="max-width:100%;height:auto;display:inline-block;border-radius:12px;"/><div style="margin-top:8px;font-size:13px;color:#8aa37e;">🌞 窗边的书本与咖啡，开学的仪式感 🌵</div></figure>`,
+    },
   ],
 }
 
@@ -358,7 +389,7 @@ const signatureGroup: TemplateGroup = {
   ],
 }
 
-export const templateGroups: TemplateGroup[] = [
+const _templateGroups: TemplateGroup[] = [
   titleGroup,
   dividerGroup,
   bodyGroup,
@@ -369,3 +400,29 @@ export const templateGroups: TemplateGroup[] = [
   endGroup,
   signatureGroup,
 ]
+
+
+/**
+ * 给每个模板的 HTML 最外层注入 data-meipi-tpl 标记，
+ * 用于编辑器识别模板组件、支持删除/替换等操作。
+ */
+function _wrapTemplatesWithTplMarker(
+  groups: TemplateGroup[]
+): TemplateGroup[] {
+  return groups.map((g) => ({
+    ...g,
+    items: g.items.map((it) => ({
+      ...it,
+      render: (theme: Theme) => {
+        const html = it.render(theme)
+        // 在第一个标签的 > 之前插入 data-meipi-tpl
+        return html.replace(
+          /^(<[a-zA-Z][a-zA-Z0-9-]*)/,
+          `$1 data-meipi-tpl="${g.id}:${it.id}"`
+        )
+      },
+    })),
+  }))
+}
+
+export const templateGroups: TemplateGroup[] = _wrapTemplatesWithTplMarker(_templateGroups)
