@@ -262,6 +262,50 @@ const singleImageGroup: TemplateGroup = {
   ],
 }
 
+// ---------------- 智慧教育 ----------------
+const smarteduGroup: TemplateGroup = {
+  id: 'smartedu',
+  name: '智慧教育',
+  items: [
+    {
+      id: 'hero',
+      name: '智慧课堂头图',
+      render: () =>
+        `<table style="width:100%;border-collapse:collapse;margin:0;background:#ffffff;"><tr><td style="width:58%;padding:22px 18px;vertical-align:top;background:#f5faff;"><div style="font-size:12px;color:#1e6ee6;font-weight:700;letter-spacing:1px;">KNOW</div><div style="font-size:13px;color:#333333;font-weight:600;margin-top:4px;">智慧教育篇</div><div style="margin:12px 0 10px;color:#1e6ee6;font-size:16px;letter-spacing:2px;font-weight:700;">/////</div><h2 style="font-size:21px;font-weight:700;color:#1a1a1a;margin:0;line-height:1.35;letter-spacing:1px;">智慧课堂赋能<br/>让教学更有温度</h2></td><td style="width:42%;padding:0;vertical-align:top;background:#f5faff;"><img src="${IMG_PH}" alt="头图" style="width:100%;height:auto;display:block;"/></td></tr></table>`,
+    },
+    {
+      id: 'banner',
+      name: 'EDUCATION 蓝条',
+      render: () =>
+        `<table style="width:100%;border-collapse:collapse;margin:18px 0;"><tr><td style="padding:12px 18px;background:#1e6ee6;color:#ffffff;font-size:20px;font-weight:700;letter-spacing:2px;">EDUCATION</td></tr></table>`,
+    },
+    {
+      id: 'quote',
+      name: '左边框正文',
+      render: () =>
+        `<table style="width:100%;border-collapse:collapse;margin:18px 0;"><tr><td style="width:4px;background:#1e6ee6;"></td><td style="padding:14px 16px;background:#f8fbff;color:#333333;font-size:15px;line-height:1.9;">教育数字化是新时代教育改革发展的核心趋势，是提升课堂教学效率、优化育人体系、提高教学质量的重要抓手。长期以来，我校高度重视教师信息化教学能力提升，常态化开展信息化教学教研、课堂打磨、案例打磨工作，收获了丰硕的教学实践成果。</td></tr></table>`,
+    },
+    {
+      id: 'section',
+      name: '01 章节标题',
+      render: () =>
+        `<table style="width:100%;border-collapse:collapse;margin:22px 0;"><tr><td style="width:44px;height:44px;background:#1e6ee6;color:#ffffff;text-align:center;font-size:18px;font-weight:700;vertical-align:middle;">01</td><td style="padding:0 14px;background:#e8f4ff;color:#1e6ee6;font-size:17px;font-weight:700;vertical-align:middle;letter-spacing:1px;">优质案例荟萃</td><td style="width:44px;background:#e8f4ff;vertical-align:middle;text-align:center;"><span style="color:#1e6ee6;font-size:18px;letter-spacing:2px;">···</span></td></tr></table>`,
+    },
+    {
+      id: 'image',
+      name: '智慧教育大图',
+      render: () =>
+        `<figure style="margin:18px 0;text-align:center;"><img src="${IMG_PH}" alt="配图" style="max-width:100%;height:auto;display:inline-block;"/></figure>`,
+    },
+    {
+      id: 'full',
+      name: '智慧课堂完整版式',
+      render: () =>
+        `<table style="width:100%;border-collapse:collapse;margin:0;background:#ffffff;"><tr><td style="width:58%;padding:22px 18px;vertical-align:top;background:#f5faff;"><div style="font-size:12px;color:#1e6ee6;font-weight:700;letter-spacing:1px;">KNOW</div><div style="font-size:13px;color:#333333;font-weight:600;margin-top:4px;">智慧教育篇</div><div style="margin:12px 0 10px;color:#1e6ee6;font-size:16px;letter-spacing:2px;font-weight:700;">/////</div><h2 style="font-size:21px;font-weight:700;color:#1a1a1a;margin:0;line-height:1.35;letter-spacing:1px;">智慧课堂赋能<br/>让教学更有温度</h2></td><td style="width:42%;padding:0;vertical-align:top;background:#f5faff;"><img src="${IMG_PH}" alt="头图" style="width:100%;height:auto;display:block;"/></td></tr></table><table style="width:100%;border-collapse:collapse;margin:18px 0;"><tr><td style="padding:12px 18px;background:#1e6ee6;color:#ffffff;font-size:20px;font-weight:700;letter-spacing:2px;">EDUCATION</td></tr></table><table style="width:100%;border-collapse:collapse;margin:18px 0;"><tr><td style="width:4px;background:#1e6ee6;"></td><td style="padding:14px 16px;background:#f8fbff;color:#333333;font-size:15px;line-height:1.9;">教育数字化是新时代教育改革发展的核心趋势，是提升课堂教学效率、优化育人体系、提高教学质量的重要抓手。长期以来，我校高度重视教师信息化教学能力提升，常态化开展信息化教学教研、课堂打磨、案例打磨工作，收获了丰硕的教学实践成果。</td></tr></table><table style="width:100%;border-collapse:collapse;margin:22px 0;"><tr><td style="width:44px;height:44px;background:#1e6ee6;color:#ffffff;text-align:center;font-size:18px;font-weight:700;vertical-align:middle;">01</td><td style="padding:0 14px;background:#e8f4ff;color:#1e6ee6;font-size:17px;font-weight:700;vertical-align:middle;letter-spacing:1px;">优质案例荟萃</td><td style="width:44px;background:#e8f4ff;vertical-align:middle;text-align:center;"><span style="color:#1e6ee6;font-size:18px;letter-spacing:2px;">···</span></td></tr></table><figure style="margin:18px 0;text-align:center;"><img src="${IMG_PH}" alt="配图" style="max-width:100%;height:auto;display:inline-block;"/></figure>`,
+    },
+  ],
+}
+
 // ---------------- END ----------------
 const endGroup: TemplateGroup = {
   id: 'end',
@@ -321,6 +365,7 @@ export const templateGroups: TemplateGroup[] = [
   guideGroup,
   layoutGroup,
   singleImageGroup,
+  smarteduGroup,
   endGroup,
   signatureGroup,
 ]
